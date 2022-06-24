@@ -1,0 +1,35 @@
+<section>
+<h1>{{userType === 'edit' ? 'User Details' : 'Create User'}}</h1>
+<div [formGroup]="UserForm">
+    <span>
+        <img src="" alt="">
+    </span>
+    <div class="form-group">
+        <span>
+            <input placeholder="name" formControlName="name" type="text">
+            <span *ngIf="userType === 'edit'">
+                {{createdAt | date}}
+            </span>
+        </span>
+        <span>
+            <input placeholder="statusMessage" formControlName="statusMessage" type="text">
+        </span>
+        <span>
+            <input placeholder="email" formControlName="email" type="text">
+        </span>
+        <span>
+            <input placeholder="age" formControlName="age" type="text">
+        </span>
+        <span>
+            isPublic
+            <input formControlName="isPublic" type="checkbox">
+        </span>
+    </div>
+    <div>
+        <button (click)="onSubmit()">
+            {{userType === 'edit' ? 'Save' : 'Create'}}
+        </button>
+    </div>
+</div>
+
+</section>

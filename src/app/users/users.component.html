@@ -1,0 +1,37 @@
+<section>
+    <div class="header-cmpt">
+      <span>
+        Users
+      </span>
+      <span class="header-inputs">
+        <input placeholder="Search by name"  type="text"   [(ngModel)]="searchText"
+        (ngModelChange)="searchTrigger.next($event)">
+        <select [(ngModel)]="selectedSort" (ngModelChange)="sortTypeChange($event)" name="sortBy" id="sortBy">
+          <option value="age" selected>age</option>
+          <option value="createdAt">createdAt</option>
+        </select>
+      </span>
+    </div>
+    <div class="card-wrapper">
+    
+      <div routerLink="/user/{{user.id}}" *ngFor="let user of (users$ | async)" class="card-cmpt">
+        <span>
+          <img src="{{user.avatarUrl}}" alt="">
+        </span>
+        <span>
+          <h1>{{user.name}}</h1>
+          <h2>{{user.statusMessage}}</h2>
+          <h2>{{user.createdAt | date}}</h2>
+        </span>
+  
+      </div>
+    </div>
+    <div class="footer-cmpt">
+        <button class="footer-btn" (click)="loadMore()">
+          Load More
+        </button>
+        <button routerLink="/user/create" class="footer-btn">
+          Create New User
+        </button>  
+        </div>
+  </section>

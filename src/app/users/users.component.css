@@ -1,0 +1,40 @@
+.header-cmpt{
+    padding: 8px 4px;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    }
+    
+    .header-inputs{
+        display: flex;
+        gap: 20px;
+    }
+    
+    .card-wrapper{
+        margin: 10px auto;
+        display: flex;
+        justify-self: center;
+        justify-content: start;
+        flex-wrap: wrap;
+        gap: 10px
+    }
+    
+    .card-cmpt{
+        border: 1px solid black;
+        padding: 8px;
+        width: 48%;
+        display: flex;
+        gap: 10px;
+        cursor: pointer;
+    }
+    
+    .footer-cmpt{
+        display: flex;  
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .footer-btn{
+        width: 48%;
+    }
+    
